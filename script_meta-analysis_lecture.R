@@ -15,7 +15,7 @@ library(metaPsychometric)
 ex1_results <- meta_bare_bones(ex1_data)
 #ex1_results
 #$ N_total  : num 506179 - number of participants
-#$ K        : int 1000
+#$ K        : int 1000 - number of studies
 #$ r_bar    : num 0.301 - population correlation 
 #$ var_obs  : num 0.00163 - variance of all the studies 
 #$ var_exp  : num 0.00164 - variability expected due to random sampling
@@ -29,3 +29,7 @@ ex1_results <- meta_bare_bones(ex1_data)
 
 meta_plot_funnel(ex1_results) #distribution of correlations plus funnel from sampling theory
 meta_plot_funnel(ex1_results, show_null_dist=TRUE) #same info plus NULL distribution (distribution of points if there was no true effect)
+meta_plot_forest(ex1_results) #shows point estimates and confidence intervals of individual studies as well as meta-analytic estimate + CI
+
+#if you find evidence of moderator, filter data and run subgroup analyses
+#check for evidence of moderators
