@@ -32,4 +32,11 @@ meta_plot_funnel(ex1_results, show_null_dist=TRUE) #same info plus NULL distribu
 meta_plot_forest(ex1_results) #shows point estimates and confidence intervals of individual studies as well as meta-analytic estimate + CI
 
 #if you find evidence of moderator, filter data and run subgroup analyses
-#check for evidence of moderators
+##e.g., ex3_Canada <- ex3_data %>% filter(country=="Canada")
+##e.g., ex3_Usa <- ex3_data %>% filter(country=="United States")
+##check for evidence of moderators
+
+#Use meta_corrected
+#To correct every study individually and meta-analysis on corrected correlations 
+meta_corrected(ex1_results)
+
